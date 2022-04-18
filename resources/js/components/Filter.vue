@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h3 class="text-sm uppercase tracking-wide text-80 bg-30 p-3">
+    <div class="pt-2 pb-3">
+        <h3 class="px-3 text-xs uppercase font-bold tracking-wide">
             {{ filter.name }}
         </h3>
 
@@ -15,41 +15,42 @@
                 trackBy="value"
                 searchBy="display"
             >
-                <div
-                    slot="default"
-                    v-if="value"
-                    class="flex items-center"
+                <template
+                    #default
                 >
-                    <div
-                        v-if="value.avatar"
-                        class="mr-3"
-                    >
-                        <img
-                            :src="value.avatar"
-                            class="w-8 h-8 rounded-full block"
-                        />
+                    <div v-if="value"
+                         class="flex items-center">
+                        <div
+                            v-if="value.avatar"
+                            class="mr-3"
+                        >
+                            <img
+                                :src="value.avatar"
+                                class="w-8 h-8 rounded-full block"
+                            />
+                        </div>
+
+                        {{ value.display }}
                     </div>
+                </template>
 
-                    {{ value.display }}
-                </div>
-
-                <div
-                    slot="option"
-                    slot-scope="{ option, selected }"
-                    class="flex items-center"
-                >
+                <template #option="{ option, selected }">
                     <div
-                        v-if="option.avatar"
-                        class="mr-3"
+                        class="flex items-center"
                     >
-                        <img
-                            :src="option.avatar"
-                            class="w-8 h-8 rounded-full block"
-                        />
-                    </div>
+                        <div
+                            v-if="option.avatar"
+                            class="mr-3"
+                        >
+                            <img
+                                :src="option.avatar"
+                                class="w-8 h-8 rounded-full block"
+                            />
+                        </div>
 
-                    {{ option.display }}
-                </div>
+                        {{ option.display }}
+                    </div>
+                </template>
             </search-input>
 
         </div>
@@ -57,7 +58,7 @@
 </template>
 
 <script>
-import { PerformsSearches } from "laravel-nova"
+import PerformsSearches from "laravel-nova-performs-searches"
 import storage from '../storage/BelongsToFieldStorage'
 
 export default {
@@ -84,7 +85,7 @@ export default {
                         search: this.search,
                     },
                 }
-            ).then(({ data: { resources } }) => {
+            ).then(({data: {resources}}) => {
                 this.availableResources = resources;
             });
         },

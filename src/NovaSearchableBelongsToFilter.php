@@ -1,6 +1,6 @@
 <?php
 
-namespace Suenerds\NovaSearchableBelongsToFilter;
+namespace Khalin\Nova4SearchableBelongsToFilter;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;

@@ -1,25 +1,27 @@
 {
-    "name": "suenerds/nova-searchable-belongs-to-filter",
-    "description": "Searchable Nova filter for belongsTo relationships.",
+    "name": "khalin/nova4-searchable-belongs-to-filter",
+    "description": "Searchable Nova 4 filter for belongsTo relationships.",
     "keywords": [
         "laravel",
         "nova",
-	"filter",
-	"belongs-to"
+        "nova-4",
+        "filter",
+        "belongs-to"
     ],
     "license": "MIT",
     "require": {
-        "php": ">=7.1.0"
+        "php": ">=7.1.0",
+        "laravel/nova": "^4.0"
     },
     "autoload": {
         "psr-4": {
-            "Suenerds\\NovaSearchableBelongsToFilter\\": "src/"
+            "Khalin\\Nova4SearchableBelongsToFilter\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Suenerds\\NovaSearchableBelongsToFilter\\FilterServiceProvider"
+                "Khalin\\Nova4SearchableBelongsToFilter\\FilterServiceProvider"
             ]
         }
     },

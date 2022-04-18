@@ -3,7 +3,7 @@ Searchable Nova filter for belongsTo relationships.
 
 ### Demo
 
-![demo](https://user-images.githubusercontent.com/4764281/69803436-76184200-11dc-11ea-9c19-4eacf1ba3b4c.gif)
+![demo](./.github/images/demo.png)
 
 ### Prerequisites
 
@@ -11,7 +11,7 @@ This package assumes you have a text-search setup for your Eloquent models. See 
 
 ### Installation
 
-`composer require suenerds/nova-searchable-belongs-to-filter`
+`composer require khalin/nova4-searchable-belongs-to-filter`
 
 ### Usage
 
@@ -23,7 +23,7 @@ By default the filter will display the name of the `fieldAttribute` you passed o
 ```php
 // app/Nova/User.php
 
-use Suenerds\NovaSearchableBelongsToFilter\NovaSearchableBelongsToFilter
+use Khalin\Nova4SearchableBelongsToFilter\NovaSearchableBelongsToFilter
 
 public function filters(Request $request)
 {
